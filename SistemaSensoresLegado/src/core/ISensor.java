@@ -1,6 +1,7 @@
 package core;
 
 public interface ISensor {
-    String lerDados();
-    void exibirDados();
+    //String lerDados();
+    String exibirDados();
+    String getTipo();
 }

@@ -1,6 +1,6 @@
 package display;
-public class DisplayConsole {
-    public void mostrarDados(String tipo, String valor) {
-        System.out.println("["+ tipo +"]: "+ valor);
+public class DisplayConsole implements IDisplay {
+    public void mostrarDados(String tipo, String dados) {
+        System.out.println("["+ tipo +"]: "+ dados);
     }
 }

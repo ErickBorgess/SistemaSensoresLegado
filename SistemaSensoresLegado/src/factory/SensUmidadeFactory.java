@@ -1,10 +1,10 @@
 package factory;
 
-import adapter.SensorUmidadeAdaptado;
+import adapter.SensorUmidadeAdapter;
 import core.ISensor;
 
 public class SensUmidadeFactory extends SensorFactory {
     public ISensor criarRelatorio() {
-        return new SensorUmidadeAdaptado();
+        return new SensorUmidadeAdapter();
     }
 }

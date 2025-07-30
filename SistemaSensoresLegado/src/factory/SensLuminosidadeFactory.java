@@ -1,10 +1,10 @@
 package factory;
 
-import adapter.SensorLuminosidadeAdaptado;
+import adapter.SensorLuminosidadeAdapter;
 import core.ISensor;
 
 public class SensLuminosidadeFactory extends SensorFactory {
     public ISensor criarRelatorio() {
-        return new SensorLuminosidadeAdaptado();
+        return new SensorLuminosidadeAdapter();
     }
 }
