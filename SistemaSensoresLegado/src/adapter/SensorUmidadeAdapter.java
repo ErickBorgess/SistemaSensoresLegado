@@ -13,4 +13,8 @@ public class SensorUmidadeAdapter implements ISensor {
     public String getTipo() {
         return "Umidade";
     }
+
+    public double getValorNumerico() {
+        return sensor.lerUmidade();
+    }
 }

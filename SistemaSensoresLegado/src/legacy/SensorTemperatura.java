@@ -3,6 +3,6 @@ package legacy;
 public class SensorTemperatura {
     public double lerTemperatura() {
         //Simula leitura
-        return 36.5;
+        return 52.3;
     }
 }

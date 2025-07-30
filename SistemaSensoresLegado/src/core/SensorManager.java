@@ -2,12 +2,13 @@ package core;
 
 import java.util.ArrayList;
 import java.util.List;
+import adapter.SensorTemperaturaAdapter;
+import decorator.SensorComAlerta;
+import decorator.SensorComLog;
 import display.DisplayConsole;
 import display.IDisplay;
 import factory.SensLuminosidadeFactory;
-import factory.SensTemperaturaFactory;
 import factory.SensUmidadeFactory;
-import factory.SensorFactory;
 
 public class SensorManager {
     private static SensorManager instancia;
@@ -16,9 +17,11 @@ public class SensorManager {
 
     private SensorManager() {
         this.display = new DisplayConsole();
-        sensores.add(new SensTemperaturaFactory().criarRelatorio());
+        ISensor temperatura = new SensorTemperaturaAdapter();
         sensores.add(new SensUmidadeFactory().criarRelatorio());
         sensores.add(new SensLuminosidadeFactory().criarRelatorio());
+        sensores.add(new SensorComAlerta(temperatura, 50));
+        sensores.add(new SensorComLog(temperatura));
     }
 
     public static SensorManager getInstancia() {
@@ -33,23 +36,4 @@ public class SensorManager {
             display.mostrarDados(sensor.getTipo(), sensor.exibirDados());
         }
     }
-
-
-    //Codigo fonte
-    /*private SensorTemperatura sensorTemp = new SensorTemperatura();
-    private SensorUmidade sensorUmidade = new SensorUmidade();
-    private SensorLuminosidade sensorLuminosidade = new SensorLuminosidade();
-    private DisplayConsole display = new DisplayConsole();
-    private 
-
-    public void exibirDadosSensores() {
-        double temp = sensorTemp.lerTemperatura();
-        double umidade = sensorUmidade.lerUmidade();
-        int luminosidade = sensorLuminosidade.lerLuminosidade();
-
-        display.mostrarDados("Temperatura", temp+"°C");
-       display.mostrarDados("Umidade", umidade+"%");
-        display.mostrarDados("Luminosidade", luminosidade+" lux");
-    }*/
-
 }

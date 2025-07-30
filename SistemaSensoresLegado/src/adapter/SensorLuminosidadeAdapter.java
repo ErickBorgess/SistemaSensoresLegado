@@ -7,10 +7,14 @@ public class SensorLuminosidadeAdapter implements ISensor {
     private SensorLuminosidade sensor = new SensorLuminosidade();
 
     public String exibirDados() {
-        return sensor.lerLuminosidade()+" Lux";
+        return sensor.lerLuminosidade()+"Lux";
     }
 
     public String getTipo() {
         return "Luminosidade";
+    }
+
+    public double getValorNumerico() {
+        return sensor.lerLuminosidade();
     }
 }

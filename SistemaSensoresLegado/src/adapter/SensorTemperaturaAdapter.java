@@ -13,4 +13,8 @@ public class SensorTemperaturaAdapter implements ISensor {
     public String getTipo() {
         return "Temperatura";
     }
+
+    public double getValorNumerico() {
+        return sensor.lerTemperatura();
+    }
 }
