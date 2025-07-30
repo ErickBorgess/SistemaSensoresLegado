@@ -1,3 +1,5 @@
+package legacy;
+
 public class SensorLuminosidade {
     public int lerLuminosidade() {
         //Simula leitura de luminosidade
