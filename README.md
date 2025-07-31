@@ -45,13 +45,13 @@ Aplicar padrões de criação e padõres estruturais para tornar o sistema mais 
 - Reutilização de código legado: com Adapter, os sensores antigos continuam funcionando no sistema novo.
 
 ## Estrutura de Pastas
-/SistemaSensoresLegado
-  /lib
-  /src
-  ├── adapter/
-  ├── app/
-  ├── core/
-  ├── decorator/
-  ├── display/
-  ├── factory/
-  └── legacy/
+- /SistemaSensoresLegado
+-  /lib
+-  /src
+-    ├── adapter/
+-    ├── app/
+-    ├── core/
+-    ├── decorator/
+-    ├── display/
+-    ├── factory/
+-    └── legacy/
